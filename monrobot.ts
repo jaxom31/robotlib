@@ -108,7 +108,7 @@ namespace monrobot {
      */
 
     //% weight=100
-    //%block="initialize via I2C until success"
+    //%block="initialiser le Maqueen"
     export function I2CInit(): void {
         let Version_v = 0;
         pins.i2cWriteNumber(I2CADDR, 0x32, NumberFormat.Int8LE);
