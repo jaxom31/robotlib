@@ -10,10 +10,10 @@
         "ws2812b": "github:microsoft/pxt-ws2812b#v0.1.2"
     },
     "files": [
-
+        "main.ts",
         "README.md",
         "robot.ts",
-		"monrobot-strings.fr"
+        "monrobot-strings.fr"
     ],
     "testFiles": [
         "test.ts"
