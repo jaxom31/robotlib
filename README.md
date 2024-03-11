@@ -1,5 +1,5 @@
 
-> Ouvrir cette page à [https://jaxom31.github.io/maqueenv2_modifiable/](https://jaxom31.github.io/maqueenv2_modifiable/)
+> Ouvrir cette page à [https://jaxom31.github.io/maqueenv2_modifiable/](https://jaxom31.github.io/robotlib/)
 
 ## Utiliser comme extension
 
@@ -16,7 +16,7 @@ Ce dépôt peut être ajouté en tant qu'**extension** dans MakeCode.
 
 * ouvrir [https://makecode.microbit.org/](https://makecode.microbit.org/)
 * cliquez sur **Importer** puis cliquez sur **Importer l'URL **
-* collez **https://github.com/jaxom31/maqueenv2_modifiable** et cliquez sur importer
+* collez **https://github.com/jaxom31/robotlib** et cliquez sur importer
 
 #### Métadonnées (utilisées pour la recherche, le rendu)
 
