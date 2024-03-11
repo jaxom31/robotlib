@@ -1,6 +1,6 @@
 {
     "name": "RobotLib",
-	"version" : "0.0.1";
+	"version" : "0.0.1",
     "description": "Refonte de la bibliotheque maqueenv2",
     "dependencies": {
         "core": "*",
@@ -13,7 +13,7 @@
 	    "main.blocks",
         "main.ts",
         "README.md",
-        "robot.ts",
+        "monrobot.ts",
         "_locale/fr/monrobot-strings.fr"
     ],
     "testFiles": [
