@@ -13,8 +13,12 @@
 	    "main.blocks",
         "main.ts",
         "README.md",
+        "_locale/fr/monrobot-strings.fr",
         "monrobot.ts",
-        "_locale/fr/monrobot-strings.fr"
+        "camera.ts",
+        "i2c.cpp",
+        "shims.d.ts",
+        "enums.d.ts"
     ],
     "testFiles": [
         "test.ts"

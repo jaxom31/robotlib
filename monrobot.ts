@@ -8,37 +8,37 @@ namespace monrobot {
 
     //Motor selection enumeration
     export enum MyEnumMotor {
-        //% block="left motor"
+        //% block="moteur gauche"
         LeftMotor,
-        //% block="right motor"
+        //% block="moteur droite"
         RightMotor,
-        //% block="all motor"
+        //% block="deux moteurs"
         AllMotor,
     };
 
     //Motor direction enumeration selection
     export enum MyEnumDir {
-        //% block="rotate forward"
+        //% block="en avant"
         Forward,
-        //% block="backward"
+        //% block="en arrière"
         Backward,
     };
 
     //LED light selection enumeration
     export enum MyEnumLed {
-        //% block="left led light"
+        //% block="LED gauche"
         LeftLed,
-        //% block="right led light"
+        //% block="LED droite"
         RightLed,
-        //% block="all led light"
+        //% block="deux LEDs"
         AllLed,
     };
 
     //LED light switch enumeration selection
     export enum MyEnumSwitch {
-        //% block="close"
+        //% block="éteint"
         Close,
-        //% block="open"
+        //% block="allumé"
         Open,
     };
 
@@ -59,25 +59,25 @@ namespace monrobot {
      * Well known colors for a NeoPixel strip
      */
     export enum NeoPixelColors {
-        //% block=red
+        //% block=rouge
         Red = 0xFF0000,
         //% block=orange
         Orange = 0xFFA500,
-        //% block=yellow
+        //% block=jaune
         Yellow = 0xFFFF00,
-        //% block=green
+        //% block=vert
         Green = 0x00FF00,
-        //% block=blue
+        //% block=bleu
         Blue = 0x0000FF,
         //% block=indigo
         Indigo = 0x4b0082,
         //% block=violet
         Violet = 0x8a2be2,
-        //% block=purple
+        //% block=mauve
         Purple = 0xFF00FF,
-        //% block=white
+        //% block=blanc
         White = 0xFFFFFF,
-        //% block=black
+        //% block=noir
         Black = 0x000000
     }
 
@@ -144,7 +144,7 @@ namespace monrobot {
      * @param speed  Motor speed control, eg:100
      */
 
-    //% block="set %emotor direction %edir speed %speed"
+    //% block="activer %emotor %edir vitesse %speed"
     //% speed.min=0 speed.max=255
     //% weight=99
     export function controlMotor(emotor: MyEnumMotor, edir: MyEnumDir, speed: number): void {
@@ -180,7 +180,7 @@ namespace monrobot {
      * @param emotor Motor selection enumeration
      */
 
-    //% block="set %emotor stop"
+    //% block="arrêter %emotor"
     //% weight=98
     export function controlMotorStop(emotor: MyEnumMotor): void {
         switch (emotor) {
@@ -216,7 +216,7 @@ namespace monrobot {
      * @param eSwitch Control LED light on or off
      */
 
-    //% block="control %eled %eSwitch"
+    //% block="contrôler %eled %eSwitch"
     //% weight=97
     export function controlLED(eled: MyEnumLed, eSwitch: MyEnumSwitch): void {
         switch (eled) {
@@ -247,7 +247,7 @@ namespace monrobot {
      * @param eline Select the inspection sensor enumeration
      */
 
-    //% block="read line sensor %eline state"
+    //% block="état capteur de suivi %eline"
     //% weight=96
     export function readLineSensorState(eline: MyEnumLineSensor): number {
         pins.i2cWriteNumber(I2CADDR, LINE_STATE_REGISTER, NumberFormat.Int8LE);
@@ -278,7 +278,7 @@ namespace monrobot {
      * @param eline Select the inspection sensor enumeration
      */
 
-    //% block="read line sensor %eline  ADC data"
+    //% block="valeur capteur de suivi %eline"
     //% weight=95
     export function readLineSensorData(eline: MyEnumLineSensor): number {
         let data;
@@ -319,7 +319,7 @@ namespace monrobot {
      * @param echo echo pin selection enumeration, eg:DigitalPin.P14
      */
 
-    //% block="set ultrasonic sensor TRIG pin %trig ECHO pin %echo read data unit:cm"
+    //% block="distance en cm (pins TRIG %trig / ECHO %echo)"
     //% weight=94
     export function readUltrasonic(trig: DigitalPin, echo: DigitalPin): number {
         let data;
@@ -351,7 +351,7 @@ namespace monrobot {
      * Getting the version number
      */
 
-    //% block="read version"
+    //% block="version"
     //% weight=2
     //% advanced=true
     export function readVersion(): string {
@@ -377,7 +377,7 @@ namespace monrobot {
     //% r.min=0 r.max=255
     //% g.min=0 g.max=255
     //% b.min=0 b.max=255
-    //% block="red|%r green|%g blue|%b"
+    //% block="rouge|%r vert|%g bleu|%b"
     export function rgb(r: number, g: number, b: number): number {
         return (r << 16) + (g << 8) + (b);
     }
@@ -391,7 +391,7 @@ namespace monrobot {
     //% weight=60
     //% from.min=0 from.max=3
     //% to.min=1 to.max=4
-    //% block="range from |%from with|%to leds"
+    //% block="ensemble de LEDs RGB de|%from à|%to"
     export function ledRange(from: number, to: number): number {
         return ((from) << 16) + (2 << 8) + (to);
     }
@@ -403,7 +403,7 @@ namespace monrobot {
 
     //% weight=60
     //% index.min=0 index.max=3
-    //% block="RGB light |%index show color|%rgb"
+    //% block="allumer LED RGB |%index avec couleur |%rgb"
     export function setIndexColor(index: number, rgb: NeoPixelColors) {
         let f = index;
         let t = index;
@@ -434,7 +434,7 @@ namespace monrobot {
      */
 
     //% weight=60
-    //% block=" RGB show color |%rgb"
+    //% block="allumer toutes les LEDs RGB avec |%rgb"
     export function showColor(rgb: NeoPixelColors) {
         let r = (rgb >> 16) * (_brightness / 255);
         let g = ((rgb >> 8) & 0xFF) * (_brightness / 255);
@@ -457,7 +457,7 @@ namespace monrobot {
 
     //% weight=70
     //% brightness.min=0 brightness.max=255
-    //% block="set RGB brightness to |%brightness"
+    //% block="définir luminosité des LEDs RGB à |%brightness"
     export function setBrightness(brightness: number) {
         _brightness = brightness;
     }
@@ -467,7 +467,7 @@ namespace monrobot {
      */
 
     //% weight=40
-    //% block="clear all RGB"
+    //% block="éteindre LEDs RGB"
     export function ledBlank() {
         showColor(0)
     }
@@ -481,7 +481,7 @@ namespace monrobot {
     //% endHue.defl=360
     //% startHue.min=0 startHue.max=360
     //% endHue.min=0 endHue.max=360
-    //% blockId=led_rainbow block="set RGB show rainbow color from|%startHue to|%endHue"
+    //% blockId=led_rainbow block="afficher arc en ciel sur LEDs RGB de|%startHue à|%endHue"
     export function ledRainbow(startHue: number, endHue: number) {
         startHue = startHue >> 0;
         endHue = endHue >> 0;
