@@ -1,6 +1,6 @@
 {
     "name": "RobotLib",
-	"version" : "0.0.1",
+    "version": "0.0.1",
     "description": "Refonte de la bibliotheque maqueenv2",
     "dependencies": {
         "core": "*",
@@ -10,7 +10,7 @@
         "ws2812b": "github:microsoft/pxt-ws2812b#v0.1.2"
     },
     "files": [
-	    "main.blocks",
+        "main.blocks",
         "main.ts",
         "README.md",
         "monrobot.ts",
