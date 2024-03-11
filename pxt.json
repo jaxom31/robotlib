@@ -4,8 +4,6 @@
     "description": "Refonte de la bibliotheque maqueenv2",
     "dependencies": {
         "core": "*",
-        "radio": "*",
-        "microphone": "*",
         "ir": "github:dfrobot/pxt-dfrobot_ir#v1.0.3",
         "ws2812b": "github:microsoft/pxt-ws2812b#v0.1.2"
     },
@@ -13,7 +11,7 @@
         "main.blocks",
         "main.ts",
         "README.md",
-        "_locale/fr/monrobot-strings.fr",
+        "_locales/fr/monrobot-strings.fr",
         "monrobot.ts",
         "camera.ts",
         "i2c.cpp",
